@@ -11,8 +11,8 @@ public class main {
 			Infos info = new Infos ();
 			
 			System.out.println("você deseja montar uma ficha inicial? \n ficha (1) ou dado (2)");
-			int escolha = in.nextInt();
-			if (escolha == 2) {
+			int escolhas = in.nextInt();
+			if (escolhas == 2) {
 				System.out.println("qual dado você deseja?/n 4, 6 ,8 ,10 ,12 ,20 ,100:");
 				int dado= in.nextInt();
 				System.out.println( new Random().nextInt(dado) + 1);
@@ -26,7 +26,7 @@ public class main {
 					int dado2= in.nextInt();
 					System.out.println( new Random().nextInt(dado2) + 1);
 				}	
-			} else if (escolha == 1) {
+			} else if (escolhas == 1) {
 			
 			System.out.println("Insira seu nome aqui:");
 			String nomeJogador = in.next();
@@ -337,7 +337,7 @@ public class main {
 								System.out.println("sabedoria:" + sabedoria + "(" + modS + ")");
 								System.out.println("carisma:" + carisma + "(" + modCr + ")");
 							
-							
+						}
 						}
 				
 				
