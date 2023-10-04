@@ -1,5 +1,6 @@
 package ficha;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class main {
@@ -9,10 +10,28 @@ public class main {
 			AtribRaca hab = new AtribRaca ();
 			Infos info = new Infos ();
 			
+			System.out.println("você deseja montar uma ficha inicial? \n ficha (1) ou dado (2)");
+			int escolha = in.nextInt();
+			if (escolha == 2) {
+				System.out.println("qual dado você deseja?/n 4, 6 ,8 ,10 ,12 ,20 ,100:");
+				int dado= in.nextInt();
+				System.out.println( new Random().nextInt(dado) + 1);
+				for (int i = 0; i < 50; i++) {
+					System.out.println("você deseja rodar outro dado? /n sim(1) ou não (2)");
+					int repeat = in.nextInt();
+					if (repeat == 2) {
+						break;
+					}
+					System.out.println("qual dado você deseja?/n 4, 6 ,8 ,10 ,12 ,20 ,100:");
+					int dado2= in.nextInt();
+					System.out.println( new Random().nextInt(dado2) + 1);
+				}	
+			} else if (escolha == 1) {
+			
 			System.out.println("Insira seu nome aqui:");
-			String nomeJogador = in.nextLine();
+			String nomeJogador = in.next();
 			System.out.println("Insira o nome do seu personagem aqui:");
-			String nomePersonagem = in.nextLine();
+			String nomePersonagem = in.next();
 			System.out.println("Agora você ira selecionar a sua raça, digitando o numero ao lado da classe desejada:");
 			for (int i = 0; i < 9; i++) {
 				System.out.println(info.nomeRacas[i] + "(" + i + ")"); }
@@ -162,8 +181,8 @@ public class main {
 				hp = modC + 8;
 			}
 
-				System.out.println("nome jogador:" + nomeJogador);
-				System.out.println("nome peronagem: " + nomePersonagem);
+				System.out.println("\nnome jogador:" + nomeJogador);
+				System.out.println("nome peronagem:" + nomePersonagem);
 				System.out.println("raça:" + info.nomeRacas[numRacas]);
 				System.out.println("classe: " + info.nomesClasses[numClasse]);
 				System.out.println("pontos de vida:" + hp);
@@ -173,8 +192,9 @@ public class main {
 				System.out.println("contituição:" + constituicao + "(" + modC + ")");
 				System.out.println("inteligencia:" + inteligencia + "(" + modI + ")");
 				System.out.println("sabedoria:" + sabedoria + "(" + modS + ")");
-				System.out.println("carisma:" + carisma + "(" + modCr + ")");
+				System.out.println("carisma:" + carisma + "(" + modCr + ")"); 
+				System.out.println("classe e armadura:" + (10 + modC));
 
-	}
+			}	}
 
 }
