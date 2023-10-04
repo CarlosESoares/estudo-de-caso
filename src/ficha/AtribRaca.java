@@ -4,7 +4,7 @@ public class AtribRaca {
 	private int [] Atrib = new int [6];
 	protected int [] selecao;
 	
-	public AtribRaca(int[] atrib, int[] selecao) {
+	public AtribRaca(int[] atrib) {
 		super();
 		Atrib [0] = 8;
 		Atrib [1] = 8;
