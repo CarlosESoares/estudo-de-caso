@@ -198,9 +198,9 @@ public class main {
 					System.out.println("voce deseja modificar ");
 					System.out.println("(1) os atributos ,(2)classe,");
 					
-					int escolha2 = in.nextInt();
+					int selecao = in.nextInt();
 					
-						if (escolha2 == 1) {
+						if (selecao == 1) {
 							
 							int limite2 = 27;
 							
@@ -300,7 +300,7 @@ public class main {
 					
 				}
 			
-						else if(escolha2 == 2) {
+						else if(selecao == 2) {
 							System.out.println("Escolha sua classe igualmente você escolheu sua raça:");
 							for (int i = 0; i < 12; i++) {
 								System.out.println(info.nomesClasses [i] + "(" + i + ")"); }
@@ -316,10 +316,53 @@ public class main {
 							modC, inteligencia, modificar, sabedoria, modS, carisma, modCr)[i]);
 							}
 							
+						
+				} else if (selecao == 3) {
+					for (int j = 0; j < 6; j++) {
+						if (hab.getAtrib()[j] != 8) {
+							hab.getAtrib()[j] = 8; }
 						}
+						System.out.println("selecione sua raça novamente!");
+						numRacas = in.nextInt();
+						if (numRacas == 0) {
+							hab.anao();
+						} else if (numRacas == 1) {
+							hab.elfo();
+						} else if (numRacas == 2) {
+							hab.humano();
+						} else if (numRacas == 3) {
+							hab.pequenino();
+						} else if (numRacas == 4) {
+							hab.draconato();
+						} else if (numRacas == 5) {
+							hab.gnomo();
+						} else if (numRacas == 6) {
+							hab.meioElfo();
+						} else if (numRacas == 7) {
+							hab.meioOrc();
+						} else if (numRacas == 8) {
+							hab.tiferino();
+						} if (numRacas > 8 || numRacas < 0 ) {
+							System.out.println("esse numero de raça não existe! reinicie o progama (╥ω╥)");
+							System.exit(0); }
+						
+						forca = hab.getAtrib()[0] + pontosF;
+						destreza = hab.getAtrib()[1] + pontosD;
+						constituicao = hab.getAtrib()[2] + pontosC;
+						inteligencia = hab.getAtrib()[3] + pontosI;
+						sabedoria = hab.getAtrib()[4] + pontosS;
+						carisma = hab.getAtrib()[5] + pontosCr;
+						
+						System.out.println("\n 	☆⌒(≧▽​° ) ノ ( sua ficha player!)\n");
+						for (int i = 0; i < 13; i++) {
+						System.out.println(imprima(nomeJogador, nomePersonagem, info.nomeRacas, numRacas,
+						info.nomesClasses, numClasse,hp, modD, forca, modF, destreza, constituicao,
+						modC, inteligencia, modificar, sabedoria, modS, carisma, modCr)[i]);
 						}
-				} 	
-}
+					} 	
+				}
+			}
+		}
 		public static String [] imprima (String nomeJogador, String nomePersonagem, String [] nomeRacas,
 				int numRacas, String [] nomesClasses, int numClasse, int hp, int modD, int forca, int modF,
 				int destreza, int constituicao, int modC, int inteligencia, int modI, int sabedoria,
