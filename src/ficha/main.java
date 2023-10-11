@@ -181,19 +181,12 @@ public class main {
 				hp = modC + 8;
 			}
 
-				System.out.println("\nnome jogador:" + nomeJogador);
-				System.out.println("nome peronagem:" + nomePersonagem);
-				System.out.println("raça:" + info.nomeRacas[numRacas]);
-				System.out.println("classe: " + info.nomesClasses[numClasse]);
-				System.out.println("pontos de vida:" + hp);
-				System.out.println("iniciativa:" + modD);
-				System.out.println("força:" + forca + "(" + modF + ")");
-				System.out.println("destreza:" + destreza + "(" + modD + ")");
-				System.out.println("contituição:" + constituicao + "(" + modC + ")");
-				System.out.println("inteligencia:" + inteligencia + "(" + modI + ")");
-				System.out.println("sabedoria:" + sabedoria + "(" + modS + ")");
-				System.out.println("carisma:" + carisma + "(" + modCr + ")"); 
-				System.out.println("classe e armadura:" + (10 + modC));
+			System.out.println("\n 	☆⌒(≧▽​° ) ノ ( sua ficha player!)\n");
+			for (int i = 0; i < 13; i++) {
+			System.out.println(imprima(nomeJogador, nomePersonagem, info.nomeRacas, numRacas,
+			info.nomesClasses, numClasse,hp, modD, forca, modF, destreza, constituicao,
+			modC, inteligencia, modificar, sabedoria, modS, carisma, modCr)[i]);
+			}
 
 				System.out.println("voce deseja modificar a ficha?");
 				System.out.println("voce tem a opção '1' e '2'");
@@ -298,18 +291,12 @@ public class main {
 							int modCr2 = carisma2/2 - 5;
 							
 
-							System.out.println("nome jogador:" + nomeJogador);
-							System.out.println("nome peronagem: " + nomePersonagem);
-							System.out.println("raça:" + info.nomeRacas[numRacas]);
-							System.out.println("classe: " + info.nomesClasses[numClasse]);
-							System.out.println("pontos de vida:" + hp);
-							System.out.println("iniciativa:" + modD2);
-							System.out.println("força:" + forca2 + "(" + modF2 + ")");
-							System.out.println("destreza:" + destreza2 + "(" + modD2 + ")");
-							System.out.println("contituição:" + constituicao2 + "(" + modC2 + ")");
-							System.out.println("inteligencia:" + inteligencia2 + "(" + modI2 + ")");
-							System.out.println("sabedoria:" + sabedoria2 + "(" + modS2 + ")");
-							System.out.println("carisma:" + carisma2 + "(" + modCr2 + ")");
+							System.out.println("\n 	☆⌒(≧▽​° ) ノ ( sua ficha player!)\n");
+							for (int i = 0; i < 13; i++) {
+							System.out.println(imprima(nomeJogador, nomePersonagem, info.nomeRacas, numRacas,
+							info.nomesClasses, numClasse,hp, modD, forca, modF, destreza, constituicao,
+							modC, inteligencia, modificar, sabedoria, modS, carisma, modCr)[i]);
+							}
 					
 				}
 			
@@ -322,32 +309,27 @@ public class main {
 								System.out.println("esse numero de classe não existe! reinicie o progama");
 							}
 								
-								System.out.println("sua ficha nova:");
-								
-								System.out.println("nome jogador:" + nomeJogador);
-								System.out.println("nome peronagem: " + nomePersonagem);
-								System.out.println("raça:" + info.nomeRacas[numRacas]);
-								System.out.println("classe: " + info.nomesClasses[numClasse2]);
-								System.out.println("pontos de vida:" + hp);
-								System.out.println("iniciativa:" + modD);
-								System.out.println("força:" + forca + "(" + modF + ")");
-								System.out.println("destreza:" + destreza + "(" + modD + ")");
-								System.out.println("contituição:" + constituicao + "(" + modC + ")");
-								System.out.println("inteligencia:" + inteligencia + "(" + modI + ")");
-								System.out.println("sabedoria:" + sabedoria + "(" + modS + ")");
-								System.out.println("carisma:" + carisma + "(" + modCr + ")");
+							System.out.println("\n 	☆⌒(≧▽​° ) ノ ( sua ficha player!)\n");
+							for (int i = 0; i < 13; i++) {
+							System.out.println(imprima(nomeJogador, nomePersonagem, info.nomeRacas, numRacas,
+							info.nomesClasses, numClasse,hp, modD, forca, modF, destreza, constituicao,
+							modC, inteligencia, modificar, sabedoria, modS, carisma, modCr)[i]);
+							}
 							
 						}
 						}
-				
-				
-				} 
-
-					
-				
-				
-				
-				
-	}
-
+				} 	
+}
+		public static String [] imprima (String nomeJogador, String nomePersonagem, String [] nomeRacas,
+				int numRacas, String [] nomesClasses, int numClasse, int hp, int modD, int forca, int modF,
+				int destreza, int constituicao, int modC, int inteligencia, int modI, int sabedoria,
+				int modS, int carisma, int modCr) {
+			String [] imprima = {"nome do jogador:" + nomeJogador, "nome do personagem:" + nomePersonagem,
+					"raça:" + nomeRacas[numRacas], "classe: " + nomesClasses[numClasse], "pontos de vida:" + hp,
+					"iniciativa:" + modD, "força:" + forca + "(" + modF + ")",
+					"destreza:" + destreza + "(" + modD + ")", "contituição:" + constituicao + "(" + modC + ")",
+					"inteligencia:" + inteligencia + "(" + modI + ")", "sabedoria:" + sabedoria + "(" + modS + ")",
+					"carisma:" + carisma + "(" + modCr + ")","┬┴┬┴┤･ω･)ﾉ ~ bye bye"};
+			return imprima;
+		}	
 }
