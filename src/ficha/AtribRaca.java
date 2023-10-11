@@ -2,7 +2,6 @@ package ficha;
 
 public class AtribRaca {
 	private int [] Atrib = new int [6];
-	protected int [] selecao;
 	
 	public AtribRaca(int[] atrib) {
 		super();
