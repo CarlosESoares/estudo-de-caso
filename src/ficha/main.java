@@ -16,7 +16,10 @@ public class main {
 			System.out.println("você deseja montar uma ficha inicial ou rolar um dado?"
 			+ "\n ficha (1) ou dado (2) ヾ(・ω・*)");
 			int escolhas = in.nextInt();
-			if (escolhas == 2) {
+			if (escolhas > 2) {
+				System.out.println("essa opção não existe!");
+				System.setOut(null);
+			} else if (escolhas == 2) {
 				System.out.println("qual dado você deseja?/n 4, 6 ,8 ,10 ,12 ,20 ,100:");
 				int dado= in.nextInt();
 				System.out.println( new Random().nextInt(dado) + 1);
