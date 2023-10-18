@@ -10,11 +10,7 @@ public class main {
 			AtribRaca hab = new AtribRaca ();
 			Infos info = new Infos ();
 			
-			System.out.println("(Ola player! eu sou Cloveis, um ajudante não assalariado que ira te ajudar na sua aventura no mundo "
-			+ "do Role Play Game  𓂂 ﾟ⟡ RPG!) \n （ﾉ´∀`） ノ ");
-			
-			System.out.println("você deseja montar uma ficha inicial ou rolar um dado?"
-			+ "\n ficha (1) ou dado (2) ヾ(・ω・*)");
+			System.out.println("você deseja montar uma ficha inicial? \n ficha (1) ou dado (2)");
 			int escolhas = in.nextInt();
 			if (escolhas == 2) {
 				System.out.println("qual dado você deseja?/n 4, 6 ,8 ,10 ,12 ,20 ,100:");
@@ -60,7 +56,7 @@ public class main {
 			} else if (numRacas == 8) {
 				hab.tiferino();
 			} if (numRacas > 8 || numRacas < 0 ) {
-				System.out.println("esse numero de raça não existe! reinicie o progama (╥ω╥)");
+				System.out.println("esse numero de raça não existe! reinicie o progama");
 				System.exit(0); }
 			
 			System.out.println("Escolha sua classe igualmente você escolheu sua raça:");
@@ -68,16 +64,16 @@ public class main {
 				System.out.println(info.nomesClasses [i] + "(" + i + ")"); }
 			int numClasse = in.nextInt();
 			if (numClasse < 0 || numClasse > 11) {
-				System.out.println("esse numero de classe não existe! reinicie o progama (╥ω╥)");
+				System.out.println("esse numero de classe não existe! reinicie o progama");
 				System.exit(0);
 			}
-			 System.out.println("Aqui você tera 27 pontos para gastar comprando as habilidade de seus personagens!(★ω★)"
-			 		+"\n as suas habilidades são:\n");
+			 System.out.println("Aqui você tera 27 pontos para gastar comprando as habilidade de seus personagens! \n"
+					+ "as suas habilidades são:\n");
 			for (int i = 0; i < 6; i++) {
 				System.out.println(info.nomeMod[i]);
 			}
-			System.out.println("\n Abaixo terá uma tabela com a quantidade de pontos da habilidade, o custo e quanto"
-					+ "ele modifica o dado. (* ^ ω ^) \n" + "Observações! para o calculo de pontos 5 e 6 tem os mesmo valores igualmente 7 e 8\n");
+			System.out.println("\n Abaixo terá uma tabela com a quantidade de pontos da habilidade, o custo e quanto "
+					+ "ele modifica o dado.\n" + "Observações! para o calculo de pontos 5 e 6 tem os mesmo valores igualmente 7 e 8\n");
 			System.out.println(" Pontos Custo Modificador");
 			for (int i = 0; i < 8; i++) {
 				int valor = 8;
@@ -95,7 +91,7 @@ public class main {
 			}
 			limite -= pontosF;
 			if (limite < 1) {
-				System.out.println("você gastou todos os seus pontos! (；￣Д￣)");
+				System.out.println("você gastou todos os seus pontos!");
 				System.exit(0);
 			}
 			System.out.println("limite: " + limite);
@@ -109,7 +105,7 @@ public class main {
 			}
 			limite -= pontosD;
 			if (limite < 1) {
-				System.out.println("você gastou todos os seus pontos! (￣ ￣|||)");
+				System.out.println("você gastou todos os seus pontos!");
 				System.exit(0);
 			}
 			System.out.println("limite: " + limite);
@@ -122,7 +118,7 @@ public class main {
 			}
 			limite -= pontosC;
 			if (limite < 1) {
-				System.out.println("você gastou todos os seus pontos! (」＞＜)」");
+				System.out.println("você gastou todos os seus pontos!");
 				System.exit(0);
 			}
 			System.out.println("limite: " + limite);
@@ -135,7 +131,7 @@ public class main {
 			}
 			limite -= pontosI;
 			if (limite < 1) {
-				System.out.println("você gastou todos os seus pontos!(￣︿￣)");
+				System.out.println("você gastou todos os seus pontos!");
 				System.exit(0);
 			}
 			System.out.println("limite: " + limite);
@@ -148,7 +144,7 @@ public class main {
 			}
 			limite -= pontosS;
 			if (limite < 1) {
-				System.out.println("você gastou todos os seus pontos! (＞﹏＜)");
+				System.out.println("você gastou todos os seus pontos!");
 				System.exit(0);
 			}
 			System.out.println("limite: " + limite);
@@ -161,7 +157,7 @@ public class main {
 			}
 			limite -= pontosCr;
 			if (limite < 0) {
-				System.out.println("você gastou todos os seus pontos! (￣ヘ￣)");
+				System.out.println("você gastou todos os seus pontos!");
 				System.exit(0);
 			}
 			System.out.println("limite: " + limite);
@@ -192,15 +188,15 @@ public class main {
 			modC, inteligencia, modificar, sabedoria, modS, carisma, modCr)[i]);
 			}
 
-				System.out.println("\n voce deseja modificar a ficha? 	Σ(O_O)");
+				System.out.println("voce deseja modificar a ficha?");
 				System.out.println("voce tem a opção '1' e '2'");
 				
 				int escolha = in.nextInt();
 				
 				if (escolha == 1) {
 					
-					System.out.println("o que você deseja modificar? ( つ＞＜)つ");
-					System.out.println("(1) os atributos, (2) classe, (3) raça");
+					System.out.println("voce deseja modificar ");
+					System.out.println("(1) os atributos ,(2)classe,");
 					
 					int selecao = in.nextInt();
 					
@@ -215,7 +211,7 @@ public class main {
 							}
 							limite -= pontosF;
 							if (limite < 1) {
-								System.out.println("você gastou todos os seus pontos! (；￣Д￣)");
+								System.out.println("você gastou todos os seus pontos!");
 								System.exit(0);
 							}
 							System.out.println("limite: " + limite);
@@ -229,7 +225,7 @@ public class main {
 							}
 							limite -= pontosD;
 							if (limite < 1) {
-								System.out.println("você gastou todos os seus pontos! (￣ ￣|||)");
+								System.out.println("você gastou todos os seus pontos!");
 								System.exit(0);
 							}
 							System.out.println("limite: " + limite);
@@ -242,7 +238,7 @@ public class main {
 							}
 							limite -= pontosC;
 							if (limite < 1) {
-								System.out.println("você gastou todos os seus pontos! (」＞＜)」");
+								System.out.println("você gastou todos os seus pontos!");
 								System.exit(0);
 							}
 							System.out.println("limite: " + limite);
@@ -255,7 +251,7 @@ public class main {
 							}
 							limite -= pontosI;
 							if (limite < 1) {
-								System.out.println("você gastou todos os seus pontos! (￣︿￣)");
+								System.out.println("você gastou todos os seus pontos!");
 								System.exit(0);
 							}
 							System.out.println("limite: " + limite);
@@ -268,7 +264,7 @@ public class main {
 							}
 							limite -= pontosS;
 							if (limite < 1) {
-								System.out.println("você gastou todos os seus pontos! (＞﹏＜)");
+								System.out.println("você gastou todos os seus pontos!");
 								System.exit(0);
 							}
 							System.out.println("limite: " + limite);
@@ -281,7 +277,7 @@ public class main {
 							}
 							limite -= pontosCr;
 							if (limite < 0) {
-								System.out.println("você gastou todos os seus pontos!(￣ヘ￣)");
+								System.out.println("você gastou todos os seus pontos!");
 								System.exit(0);
 							}
 							System.out.println("limite: " + limite);
@@ -310,7 +306,7 @@ public class main {
 								System.out.println(info.nomesClasses [i] + "(" + i + ")"); }
 							int numClasse2 = in.nextInt();
 							if (numClasse2 < 0 || numClasse2 > 11) {
-								System.out.println("esse numero de classe não existe! reinicie o progama (╥ω╥)");
+								System.out.println("esse numero de classe não existe! reinicie o progama");
 							}
 								
 							System.out.println("\n 	☆⌒(≧▽​° ) ノ ( sua ficha player!)\n");
