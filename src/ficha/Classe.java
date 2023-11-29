@@ -3,6 +3,7 @@ package ficha;
 import java.util.ArrayList;
 
 public class Classe {
+	public  ArrayList <ArrayList> classe = new ArrayList <ArrayList> ();
 
 	   public  ArrayList <String> barbaro = new ArrayList <String> (); { 
 		barbaro.add("Adestrar Animais");

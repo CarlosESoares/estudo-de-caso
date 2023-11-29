@@ -108,65 +108,77 @@ public class Personagem {
 			if (numC == 0 ) {
 				for (int i = 0; i < cs.barbaro.size() - 1; i++) {
 			pericias.add(cs.barbaro.get(i)); }
-			hp = Integer.valueOf(cs.barbaro.get(cs.barbaro.size()-1));	
+			hp = Integer.valueOf(cs.barbaro.get(cs.barbaro.size()-1));
+			cs.classe.add(cs.barbaro);
 			}
 			if (numC == 1 ) {
 				for (int i = 0; i < info.pericias.length; i++) {
 			pericias.add(info.pericias[i]); }
 			hp = 8;	
 			pLimit = 3;
+			cs.classe.add(pericias);
 			}
 			if (numC == 2 ) {
 				for (int i = 0; i < cs.bruxo.size()-1; i++) {
 			pericias.add(cs.bruxo.get(i)); }
-			hp = Integer.valueOf(cs.bruxo.get(cs.bruxo.size()-1));	
+			hp = Integer.valueOf(cs.bruxo.get(cs.bruxo.size()-1));
+			cs.classe.add(cs.bruxo);
 			}
 			if (numC == 3 ) {
 				for (int i = 0; i < cs.clerigo.size()-1; i++) {
 			pericias.add(cs.clerigo.get(i)); }
-			hp = Integer.valueOf(cs.clerigo.get(cs.clerigo.size()-1));	
+			hp = Integer.valueOf(cs.clerigo.get(cs.clerigo.size()-1));
+			cs.classe.add(cs.clerigo);
 			}
 			if (numC == 4 ) {
 				for (int i = 0; i < cs.druida.size()-1; i++) {
 			pericias.add(cs.druida.get(i)); }
-			hp = Integer.valueOf(cs.druida.get(cs.druida.size()-1));	
+			hp = Integer.valueOf(cs.druida.get(cs.druida.size()-1));
+			cs.classe.add(cs.druida);
 			}
 			if (numC == 5 ) {
 				for (int i = 0; i < cs.feiticeiro.size()-1; i++) {
 			pericias.add(cs.feiticeiro.get(i)); }
-			hp = Integer.valueOf(cs.feiticeiro.get(cs.feiticeiro.size()-1));	
+			hp = Integer.valueOf(cs.feiticeiro.get(cs.feiticeiro.size()-1));
+			cs.classe.add(cs.feiticeiro);
 			}
 			if (numC == 6 ) {
 				for (int i = 0; i < cs.guerreiro.size()-1; i++) {
 			pericias.add(cs.guerreiro.get(i)); }
 			hp = Integer.valueOf(cs.guerreiro.get(cs.guerreiro.size()-1));	
+			cs.classe.add(cs.guerreiro);
 			}
 			if (numC == 7 ) {
 				for (int i = 0; i < cs.ladino.size()-1; i++) {
 			pericias.add(cs.ladino.get(i)); }
 			hp = Integer.valueOf(cs.ladino.get(cs.ladino.size()-1));
 			pLimit = 4;
+			cs.classe.add(cs.ladino);
 			}
 			if (numC == 8 ) {
 				for (int i = 0; i < cs.mago.size()-1; i++) {
 			pericias.add(cs.mago.get(i)); }
-			hp = Integer.valueOf(cs.mago.get(cs.mago.size()-1));	
+			hp = Integer.valueOf(cs.mago.get(cs.mago.size()-1));
+			cs.classe.add(cs.mago);
 			}
 			if (numC == 9 ) {
 				for (int i = 0; i < cs.monge.size()-1; i++) {
 			pericias.add(cs.monge.get(i)); }
 			hp = Integer.valueOf(cs.monge.get(cs.monge.size()-1));	
+			cs.classe.add(cs.monge);
 			}
 			if (numC == 10 ) {
 				for (int i = 0; i < cs.paladino.size()-1; i++) {
 			pericias.add(cs.paladino.get(i)); }
-			hp = Integer.valueOf(cs.paladino.get(cs.paladino.size()-1));	
+			hp = Integer.valueOf(cs.paladino.get(cs.paladino.size()-1));
+			cs.classe.add(cs.paladino);
 			}
 			if (numC == 11 ) {
 				for (int i = 0; i < cs.patrulheiro.size()-1; i++) {
 			pericias.add(cs.patrulheiro.get(i)); }
 			hp = Integer.valueOf(cs.patrulheiro.get(cs.patrulheiro.size()-1));
 			pLimit = 3;
+			cs.classe.add(cs.patrulheiro);
 			}
 			
 			if (numC < 0 || numC > 11) {
@@ -233,6 +245,7 @@ public class Personagem {
 			for (int i = 0; i < pericias.size() - 1; i++) {
 				System.out.println(pericias.get(i) + "(" + i + ")"); }
 				int [] cP = new int [pLimit];
+				int tamanho = pericias.size();
 				for (int i = 0; i < pLimit; i++) {
 					cP [i] = in.nextInt(); }
 				Collections.swap(pericias, 0, cP [0]);
@@ -249,7 +262,7 @@ public class Personagem {
 				System.out.println("você deseja adicionar algo em seu inventario? sim (0) ou não (1)");
 				int op = in.nextInt();
 				ArrayList <Inventario> inventario = new ArrayList <Inventario> ();
-				do {
+				while (inventario.size() < 8 && op == 0) {
 					System.out.println("seu objeto é uma arma ou outro tipo? arma (1), outro (2) ou sair(3)");
 					int aOro = in.nextInt();
 					switch (aOro) {
@@ -281,7 +294,7 @@ public class Personagem {
 						}
 						break;
 					} 
-					}  } while (inventario.size() < 8 && op == 0);
+					}}
 				
 				System.out.println("nome jogador:" + nomeJogador);
 				System.out.println("nome personagem:" + nomePersonagem);
@@ -310,7 +323,7 @@ public class Personagem {
 					System.out.println(". . .");
 				}
 				
-				 System.out.println("você deseja alterar alguma coisa na sua ficha? raça (0), classe (1), atributos (2), pericias (3), inventario (4), nada (5)");
+				 System.out.println("\n você deseja alterar alguma coisa na sua ficha? raça (0), classe (1), atributos (2), pericias (3), inventario (4), nada (5)");
 				 int modifica = in.nextInt();
 				 
 				 if (modifica == 0) {
@@ -452,9 +465,9 @@ public class Personagem {
 						
 						if (numC < 0 || numC > 11) {
 							System.out.println("esse numero de classe não existe! reinicie o progama (╥ω╥)");
-							System.exit(0);
+							System.exit(0); }
 							
-							for (int i = 0; i < pericias.size() - 1; i++) {
+							for (int i = 0; i < pericias.size(); i++) {
 								System.out.println(pericias.get(i) + "(" + i + ")"); }
 								for (int i = 0; i < pLimit; i++) {
 									cP [i] = in.nextInt(); }
@@ -495,5 +508,52 @@ public class Personagem {
 									}
 									System.out.println(". . .");
 						}
-				 } }
-	} } }
+				 } if (modifica == 3) {
+					 pericias.clear();
+					 pericias.addAll(cs.classe.get(0));
+					 
+					 for (int i = 0; i < pericias.size() - 2; i++) {
+							System.out.println(pericias.get(i) + "(" + i + ")"); }
+							cP = new int [pLimit];
+							for (int i = 0; i < pLimit; i++) {
+								cP [i] = in.nextInt(); }
+							Collections.swap(pericias, 0, cP [0]);
+							Collections.swap(pericias, 1, cP [1]);
+							if (pLimit == 3) {
+								Collections.swap(pericias, 2, cP [2]);
+							} if (pLimit == 4) {
+								Collections.swap(pericias, 3, cP [3]);
+							}
+							if (pericias.size() > pLimit) {
+								pericias.subList(pLimit, pericias.size()).clear();
+							}
+							
+							System.out.println("nome jogador:" + nomeJogador);
+							System.out.println("nome personagem:" + nomePersonagem);
+							System.out.println("tendencia:" + tend);
+							System.out.println("raça: " + info.nomeR[numR]);
+							System.out.println("classe: " + info.nomesC[numC]);
+							System.out.println("hp: " + (hp + mC));
+							System.out.println("deslocamento:" + rc.raca[6]);
+							System.out.println("força: " + forc + "(" + mF + ")");
+							System.out.println("destreza: " + des + "(" + mD + ")");
+							System.out.println("constituição: " + cons + "(" + mC + ")");
+							System.out.println("inteligencia: " + intg + "(" + mI + ")");
+							System.out.println("sabedoria" + sab + "(" + mS + ")");
+							System.out.println("carisma:" + carc + "(" + mCr + ")");
+							System.out.println("suas pericias:");
+							for (int i = 0; i < pericias.size(); i++) {
+								System.out.println(pericias.get(i));
+							}
+							System.out.println("seu inventario:");
+							for (Inventario itens : inventario) {
+								if (itens instanceof Armas) {
+									((Armas)itens).exibirArmas();
+								} else if (itens instanceof Inventario) {
+									((Inventario) itens).exibir();
+								}
+								System.out.println(". . .");
+				 } } 
+
+	}
+				} }
