@@ -11,6 +11,7 @@ public class Personagem {
 	public static void main(String[] args) {
 		Scanner in = new Scanner (System.in);
 		
+		
 		System.out.println("(Ola player! eu sou Cloveis, um ajudante não assalariado que ira te ajudar na sua aventura no mundo"
 		+ "do Role Play Game  𓂂 ﾟ⟡ RPG!) \n （ﾉ´∀`） ノ ");
 		
@@ -611,7 +612,94 @@ public class Personagem {
 								((Inventario) itens).exibir();
 							}
 							System.out.println(". . .");
-				 } }
-
+				 } } if (modifica == 4) {
+					 System.out.println("você deseja excluir (0), alterar (1), adicionar (2), sair (3)");
+					 int escol = in.nextInt();
+					 switch (escol) {
+					 case 2: {
+						 while (inventario.size() < 8 && op == 0) {
+								System.out.println("seu objeto é uma arma ou outro tipo? arma (1), outro (2) ou sair(3)");
+								int aOro = in.nextInt();
+								switch (aOro) {
+								case 1 : {
+									System.out.println("Informe o nome de sua Arma:");
+									String nomeArma = in.next();
+									System.out.println("Informe a descrição da Arma:");
+									String descArma = in.next();
+									System.out.println("Informe o dano da Arma:");
+									int danoArma = in.nextInt();
+									System.out.println("Informe o peso de sua arma:");
+									double pesoArma = in.nextDouble();
+									Armas arma = new Armas (nomeArma,descArma,danoArma,pesoArma);
+									inventario.add(arma);
+									break;
+								}
+								case 2 : {
+									System.out.println("Informe o nome do seu Objeto:");
+									String nomeObjeto = in.next();
+									System.out.println("Informe a descrição do seu objeto:");
+									String descObjeto = in.next();
+									Inventario objeto = new Inventario (nomeObjeto,descObjeto);
+									inventario.add(objeto);
+									break;
+								}
+								case 3: {
+									for (int i = 0; i < 8; i++) {
+										inventario.add(null);
+									}
+									break;
+								} 
+								}}
+						 
+					 } case 1: {
+						 System.out.println("qual objeto você deseja modificar?");
+						 int local = in.nextInt();
+						 Inventario objeto = inventario.get(local);
+						 if (objeto instanceof Armas) {
+							 objeto.setObjeto(in.nextLine());
+							 objeto.setDescObjeto(in.nextLine());
+							 ((Armas) objeto).setDano(in.nextInt());
+							 ((Armas) objeto).setPeso(in.nextInt());
+						 } if (objeto instanceof Inventario) {
+							 objeto.setObjeto(in.nextLine());
+							 objeto.setDescObjeto(in.nextLine());
+						 }
+					 } case 0: {
+						 System.out.println("qual objeto você deseja excluir?");
+						 int local2 = in.nextInt();
+						 inventario.remove(local2);
+					 } case 3: {
+						 break;
+					 }
+					 
+				 }
+					 System.out.println("nome jogador:" + nomeJogador);
+						System.out.println("nome personagem:" + nomePersonagem);
+						System.out.println("tendencia:" + tend);
+						System.out.println("raça: " + info.nomeR[numR]);
+						System.out.println("classe: " + info.nomesC[numC]);
+						System.out.println("hp: " + (hp + mC));
+						System.out.println("deslocamento:" + rc.raca[6]);
+						System.out.println("força: " + forc + "(" + mF + ")");
+						System.out.println("destreza: " + des + "(" + mD + ")");
+						System.out.println("constituição: " + cons + "(" + mC + ")");
+						System.out.println("inteligencia: " + intg + "(" + mI + ")");
+						System.out.println("sabedoria" + sab + "(" + mS + ")");
+						System.out.println("carisma:" + carc + "(" + mCr + ")");
+						System.out.println("suas pericias:");
+						for (int i = 0; i < pericias.size(); i++) {
+							System.out.println(pericias.get(i));
+						}
+						System.out.println("seu inventario:");
+						for (Inventario itens : inventario) {
+							if (itens instanceof Armas) {
+								((Armas)itens).exibirArmas();
+							} else if (itens instanceof Inventario) {
+								((Inventario) itens).exibir();
+							}
+							System.out.println(". . ."); 
+				 }
 	}
-				} } 
+	}
+		} }
+
