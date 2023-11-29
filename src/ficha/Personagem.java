@@ -553,7 +553,9 @@ public class Personagem {
 									((Inventario) itens).exibir();
 								}
 								System.out.println(". . .");
-				 } } 
+				 } } if (modifica == 2) {
+					 
+				 }
 
 	}
 				} }
