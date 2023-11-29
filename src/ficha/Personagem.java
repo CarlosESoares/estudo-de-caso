@@ -554,8 +554,64 @@ public class Personagem {
 								}
 								System.out.println(". . .");
 				 } } if (modifica == 2) {
-					 
-				 }
+					 limite = 27;
+					 mod.clear();
+						for (int i = 0; i < 6; i++) {
+							System.out.println("Quantos você deseja por em " + info.nomeMod [i] +  "?");
+							mod.add(in.nextInt());
+							if (mod.get(i) == 6 || mod.get(i) == 8) {
+								mod.set(i, mod.get(i)-1);
+							}
+							limite -= mod.get(i);
+							if (limite < 0) {
+								System.out.println("você gastou todos os seus pontos! (；￣Д￣)");
+								break;
+							}
+							System.out.println("você ainda tem: " + limite + " pontos.");
+						}
+						
+						forc = rc.getRaca()[0] + mod.get(0);
+						des = rc.getRaca()[1] + mod.get(1);
+						cons = rc.getRaca()[2] + mod.get(2);
+						intg = rc.getRaca()[3] + mod.get(3);
+						sab = rc.getRaca()[4] + mod.get(4);
+						carc = rc.getRaca()[5] + mod.get(5);
+						
+						
+						
+						mF = Integer.valueOf((int) (forc/2-5));
+						mD = Integer.valueOf((int) (des/2 - 5));
+						mC = Integer.valueOf((int) (cons/2 - 5));
+						mI = Integer.valueOf((int) (intg/2 - 5));
+						mS = Integer.valueOf((int) (sab/2 - 5));
+						mCr = Integer.valueOf((int) (carc/2 - 5));
+						
+						System.out.println("nome jogador:" + nomeJogador);
+						System.out.println("nome personagem:" + nomePersonagem);
+						System.out.println("tendencia:" + tend);
+						System.out.println("raça: " + info.nomeR[numR]);
+						System.out.println("classe: " + info.nomesC[numC]);
+						System.out.println("hp: " + (hp + mC));
+						System.out.println("deslocamento:" + rc.raca[6]);
+						System.out.println("força: " + forc + "(" + mF + ")");
+						System.out.println("destreza: " + des + "(" + mD + ")");
+						System.out.println("constituição: " + cons + "(" + mC + ")");
+						System.out.println("inteligencia: " + intg + "(" + mI + ")");
+						System.out.println("sabedoria" + sab + "(" + mS + ")");
+						System.out.println("carisma:" + carc + "(" + mCr + ")");
+						System.out.println("suas pericias:");
+						for (int i = 0; i < pericias.size(); i++) {
+							System.out.println(pericias.get(i));
+						}
+						System.out.println("seu inventario:");
+						for (Inventario itens : inventario) {
+							if (itens instanceof Armas) {
+								((Armas)itens).exibirArmas();
+							} else if (itens instanceof Inventario) {
+								((Inventario) itens).exibir();
+							}
+							System.out.println(". . .");
+				 } }
 
 	}
-				} }
+				} } 
