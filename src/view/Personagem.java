@@ -1,10 +1,16 @@
-package ficha;
+package view;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Scanner;
+
+import model.Armas;
+import model.Classe;
+import model.Infos;
+import model.Inventario;
+import model.Raca;
 
 public class Personagem {
 

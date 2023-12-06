@@ -1,4 +1,4 @@
-package ficha;
+package model;
 
 public class Inventario {
 	String objeto;
