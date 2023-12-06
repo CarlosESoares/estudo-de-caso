@@ -1,7 +1,7 @@
-package model;
+package ficha;
 
 public class Raca {
-	 public double [] raca = new double [7];
+	 double [] raca = new double [7];
 	
 	public double[] getRaca() {
 		return raca;

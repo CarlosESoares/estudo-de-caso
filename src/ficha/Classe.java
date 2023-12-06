@@ -1,4 +1,4 @@
-package model;
+package ficha;
 
 import java.util.ArrayList;
 

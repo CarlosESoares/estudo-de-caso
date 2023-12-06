@@ -1,4 +1,4 @@
-package model;
+package ficha;
 
 public class Armas extends Inventario {
 	int dano;
